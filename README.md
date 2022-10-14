@@ -16,4 +16,6 @@ First, you must put parameters on application server:
 
 Then, you must configure a macro on Template with name “{$INSTANCIA}”, the value is the name server, this name is on console Oracle Weblogic. 
 
+Last, you must attach Template JMX Weblogic and Template JMX Generic, because the Template JMX Weblogic is a complement in order to monitoring.
+
 Enjoy it!
