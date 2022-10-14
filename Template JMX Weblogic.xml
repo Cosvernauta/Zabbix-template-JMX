@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2022-10-13T23:59:40Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template JMX Weblogic</template>
+            <name>Template JMX Weblogic</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Connection Factory</name>
+                </application>
+                <application>
+                    <name>CoonectionPool</name>
+                </application>
+                <application>
+                    <name>Datasource</name>
+                </application>
+                <application>
+                    <name>HeapDump</name>
+                </application>
+                <application>
+                    <name>HTTPS</name>
+                </application>
+                <application>
+                    <name>JMS Server</name>
+                </application>
+                <application>
+                    <name>JTA</name>
+                </application>
+                <application>
+                    <name>myrealm</name>
+                </application>
+                <application>
+                    <name>Weblogic</name>
+                </application>
+                <application>
+                    <name>WL Threads</name>
+                </application>
+                <application>
+                    <name>WL webapp</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Weblogic Version</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:Name={$INSTANCIA},Type=ServerRuntime&quot;,WeblogicVersion]</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Weblogic</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>jt Active Transactions Total Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=JTARuntime,Type=JTARuntime&quot;,ActiveTransactionsTotalCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <description>Lists all of the active transactions coordinated by the server or in which server resources participate.</description>
+                    <applications>
+                        <application>
+                            <name>JTA</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>jt Transaction Abandoned Total Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=JTARuntime,Type=JTARuntime&quot;,TransactionAbandonedTotalCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>JTA</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>jt Transaction Committed Total Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=JTARuntime,Type=JTARuntime&quot;,TransactionCommittedTotalCount]</key>
+                    <delay>30s</delay>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>JTA</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>jt Transaction Rolled BackApp Total Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=JTARuntime,Type=JTARuntime&quot;,TransactionRolledBackAppTotalCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>JTA</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>jt Transaction Rolled Back Total Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=JTARuntime,Type=JTARuntime&quot;,TransactionRolledBackTotalCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>JTA</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>th Execute Thread Idle Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,ExecuteThreadIdleCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>WL Threads</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>th Hogging Thread Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,HoggingThreadCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>WL Threads</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                    <triggers>
+                        <trigger>
+                            <expression>{avg(1m)}&gt;{$TRHOG}</expression>
+                            <name>Hogging Thread is more than {$TRHOG} in {HOST.NAME}</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>th Pending User Request Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,PendingUserRequestCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>WL Threads</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>th Standby Thread Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,StandbyThreadCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>WL Threads</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>th Stuck Thread Count</name>
+                    <type>JMX</type>
+                    <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,StuckThreadCount]</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>WL Threads</name>
+                        </application>
+                    </applications>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Datasource Max Capacity</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:Name=*,Type=weblogic.j2ee.descriptor.wl.JDBCConnectionPoolParamsBean,Parent=[*]/JDBCSystemResources[*],Path=JDBCResource[*]/JDBCConnectionPoolParams&quot;]</key>
+                    <delay>1d</delay>
+                    <lifetime>3d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Maximum Capacity</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},MaxCapacity]</key>
+                            <history>7d</history>
+                            <trends>60d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                    </item_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>JDBCSystemResources</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:Name=*,Type=weblogic.j2ee.descriptor.wl.JDBCDriverParamsBean,Parent=[*]/JDBCSystemResources[*],Path=JDBCResource[*]/JDBCDriverParams&quot;]</key>
+                    <delay>5m</delay>
+                    <lifetime>3d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} URL</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},Url]</key>
+                            <delay>1d</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                    </item_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>AutoDiscovery State</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:Name={$INSTANCIA},Type=ServerRuntime&quot;]</key>
+                    <delay>12h</delay>
+                    <filter>
+                        <conditions>
+                            <condition>
+                                <macro>{#JMXOBJ}</macro>
+                                <value>@Disable Weblogic</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>1d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Status {#JMXOBJ}</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},State]</key>
+                            <history>1h</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <applications>
+                                <application>
+                                    <name>Weblogic</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{str(RUNNING)}=0</expression>
+                                    <name>{HOST.NAME} is not Running</name>
+                                    <priority>HIGH</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                    </item_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>ConnectionPoolRuntime</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:ServerRuntime={$INSTANCIA},Name=*,Type=JDBCConnectionPoolRuntime&quot;]</key>
+                    <delay>5m</delay>
+                    <lifetime>3d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>CP {#JMXNAME} Deployment State</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},DeploymentState]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>CoonectionPool</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                    </item_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Datasource POOL</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:ServerRuntime={$INSTANCIA},Name=*,Type=JDBCDataSourceRuntime&quot;]</key>
+                    <delay>5m</delay>
+                    <lifetime>3d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Active Connections Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},ActiveConnectionsCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Connection Delay Time</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},ConnectionDelayTime]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <units>ms</units>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Connections Total Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},ConnectionsTotalCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Current Capacity</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},CurrCapacity]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Failed Reserve Request Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},FailedReserveRequestCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{avg(1m)}&gt;30&#13;
+and&#13;
+{abschange(4m)}=1</expression>
+                                    <name>High connection Failed Reservd Request DS {#JMXNAME} in {HOST.NAME}</name>
+                                    <priority>HIGH</priority>
+                                    <manual_close>YES</manual_close>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Failures to Reconnect Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},FailuresToReconnectCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Leaked Connection Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},LeakedConnectionCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Number of idle DB Connections</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},NumAvailable]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Number of connections used by applications</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},NumUnavailable]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Waiting For Connection Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},WaitingForConnectionCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Waiting For Connection Failure Total</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},WaitingForConnectionFailureTotal]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Waiting For Connection High Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},WaitingForConnectionHighCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Waiting For Connection Success Total</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},WaitingForConnectionSuccessTotal]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Waiting For Connection Total</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},WaitingForConnectionTotal]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>DS {#JMXNAME} Wait Seconds High Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},WaitSecondsHighCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>Datasource</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>JDBC {#JMXNAME} Connections</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},ActiveConnectionsCurrentCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},CurrCapacity]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>2774A4</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},FailedReserveRequestCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>A54F10</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},FailuresToReconnectCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>FC6EA3</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},LeakedConnectionCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>5</sortorder>
+                                    <color>6C59DC</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},NumUnavailable]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>6</sortorder>
+                                    <color>AC8C14</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},NumAvailable]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>7</sortorder>
+                                    <color>611F27</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},WaitingForConnectionCurrentCount]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>JDBC {#JMXNAME} Delay Time</name>
+                            <graph_items>
+                                <graph_item>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>0080FF</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},ConnectionDelayTime]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>JMS Discovery Runtime</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:ServerRuntime={$INSTANCIA},Name=*,Type=JMSRuntime&quot;]</key>
+                    <delay>1d</delay>
+                    <lifetime>1h</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Connections Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},ConnectionsCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>&lt;p&gt;The current number of connections to WebLogic Server server.&lt;/p&gt;</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} JMS Server Total Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},JMSServersTotalCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>&lt;p&gt;The total number of JMS servers that were deployed on this WebLogic Server instance since this server was started.&lt;/p&gt;</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                    </item_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>JMS Discovery Server Runtime</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:ServerRuntime={$INSTANCIA},Name=*,Type=JMSServerRuntime&quot;]</key>
+                    <delay>1d</delay>
+                    <lifetime>1h</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Bytes Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},BytesCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The current number of bytes stored on this JMS server.&#13;
+This number does not include the pending bytes.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Bytes Pageable Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},BytesPageableCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>Return the total number of bytes in all the messages that are currently available to be paged out, but which have not yet been paged out. The JMS server attempts to keep this number smaller than the &quot;MessageBufferSize&quot; parameter.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Bytes Pending Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},BytesPendingCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The current number of bytes pending (unacknowledged or uncommitted) stored on this JMS server.&#13;
+Pending bytes are over and above the current number of bytes.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Bytes Received Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},BytesReceivedCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The number of bytes received on this JMS server since the last reset.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Bytes Threshold Time</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},BytesThresholdTime]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The amount of time in the threshold condition since the last reset.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Destinations Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},DestinationsCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The current number of destinations for this JMS server.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Messages Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},MessagesCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The current number of messages stored on this JMS server. This number does not include the pending messages.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Messages Pageable Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},MessagesPageableCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>Return the number of messages that are currently available for paging in this JMS server but have not yet been paged out. Note that due to internal implementation details, this count may be zero even if &quot;PageableByteCurrentCount&quot; is zero.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Messages Pending Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},MessagesPendingCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The current number of messages pending (unacknowledged or uncommitted) stored on this JMS server.&#13;
+Pending messages are over and above the current number of messages.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Messages Received Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},MessagesReceivedCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The number of messages received on this destination since the last reset.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Messages Threshold Time</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},MessagesThresholdTime]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <description>The amount of time in the threshold condition since the last reset.</description>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>JMS {#JMXNAME} Session Pools Current Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},SessionPoolsCurrentCount]</key>
+                            <history>7d</history>
+                            <trends>90d</trends>
+                            <applications>
+                                <application>
+                                    <name>JMS Server</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>JMS {#JMXNAME} Bytes Graph</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},BytesCurrentCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},BytesPageableCurrentCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>2774A4</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},BytesPendingCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>A54F10</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},BytesReceivedCount]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>JMS {#JMXNAME} Messaging Graph</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},MessagesCurrentCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},MessagesPageableCurrentCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>2774A4</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},MessagesPendingCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>A54F10</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},MessagesReceivedCount]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>JMS {#JMXNAME} Threshold Time Graph</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},BytesThresholdTime]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},MessagesThresholdTime]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Heap Connection JMX</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:ServerRuntime={$INSTANCIA},Name=*,Type=JVMRuntime&quot;]</key>
+                    <delay>5m</delay>
+                    <lifetime>3d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HD {#JMXNAME} ThreadStackDump</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},ThreadStackDump]</key>
+                            <delay>10m</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <applications>
+                                <application>
+                                    <name>HeapDump</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <request_method>POST</request_method>
+                        </item_prototype>
+                    </item_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                    <request_method>POST</request_method>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Connection Factory Discovery</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:ServerRuntime={$INSTANCIA},Name=CF_*,ApplicationRuntime=DbAdapter,Type=ConnectorConnectionPoolRuntime,ConnectorComponentRuntime=DbAdapter&quot;]</key>
+                    <delay>5m</delay>
+                    <lifetime>3d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Close Connections {#JMXNAME}</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},CloseCount]</key>
+                            <applications>
+                                <application>
+                                    <name>Connection Factory</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Free Connections Current {#JMXNAME}</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},FreeConnectionsCurrentCount]</key>
+                            <applications>
+                                <application>
+                                    <name>Connection Factory</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Num Waiters {#JMXNAME}</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},NumWaiters]</key>
+                            <applications>
+                                <application>
+                                    <name>Connection Factory</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                        </item_prototype>
+                    </item_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>DefaultSecure HTTPS</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;com.bea:ServerRuntime={$INSTANCIA},Name=DefaultSecure[https],Type=ServerChannelRuntime&quot;]</key>
+                    <delay>5m</delay>
+                    <lifetime>1d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>https {#JMXNAME} Connections Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},ConnectionsCount]</key>
+                            <applications>
+                                <application>
+                                    <name>HTTPS</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>https {#JMXNAME} MessagesSent Count</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},MessagesSentCount]</key>
+                            <applications>
+                                <application>
+                                    <name>HTTPS</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>HTTPS {#JMXNAME}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},ConnectionsCount]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},MessagesSentCount]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Security myrealm</name>
+                    <type>JMX</type>
+                    <key>jmx.discovery[beans,&quot;Security:Name=myrealmUserLockoutManager&quot;]</key>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Locked Users Current - {#JMXNAME}</name>
+                            <type>JMX</type>
+                            <key>jmx[{#JMXOBJ},LockedUsersCurrentCount]</key>
+                            <applications>
+                                <application>
+                                    <name>myrealm</name>
+                                </application>
+                            </applications>
+                            <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;0</expression>
+                                    <name>Blocked user detected on {HOST.NAME}</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Graph User Lock {#JMXNAME}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>199C0D</color>
+                                    <item>
+                                        <host>Template JMX Weblogic</host>
+                                        <key>jmx[{#JMXOBJ},LockedUsersCurrentCount]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <jmx_endpoint>service:jmx:rmi:///jndi/rmi://{HOST.CONN}:{HOST.PORT}/jmxrmi</jmx_endpoint>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$INSTANCIA}</macro>
+                    <value>none</value>
+                    <description>Server name in Weblogic.</description>
+                </macro>
+                <macro>
+                    <macro>{$MSDELAY}</macro>
+                    <value>1000</value>
+                </macro>
+                <macro>
+                    <macro>{$TRHOG}</macro>
+                    <value>10</value>
+                    <description>Max Hogging Thread by Triggers.</description>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <name>Threads Details</name>
+            <graph_items>
+                <graph_item>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Template JMX Weblogic</host>
+                        <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,ExecuteThreadIdleCount]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Template JMX Weblogic</host>
+                        <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,HoggingThreadCount]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Template JMX Weblogic</host>
+                        <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,PendingUserRequestCount]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Template JMX Weblogic</host>
+                        <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,StandbyThreadCount]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>FC6EA3</color>
+                    <item>
+                        <host>Template JMX Weblogic</host>
+                        <key>jmx[&quot;com.bea:ServerRuntime={$INSTANCIA},Name=ThreadPoolRuntime,Type=ThreadPoolRuntime&quot;,StuckThreadCount]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
